@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chatbox</title>
+    <meta charset="utf-8">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='chat.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+    #msg{color: gray;background-color: white;
+    margin: 20px;
+    border-style: outset;
+    border-color: darkblue;
+    font-size: 25px;}
+    #task:hover{width:60px;height:60px;}
+    #were button{float: right;}
+    </style>
+</head>
+<body onload="load()"class="jumbotron">
+<p><a href="/"><img id="task"src="http://192.185.84.204/~procrc/wp-content/uploads/2014/12/favicon.png" width="50px" height="50px"></img></a>
+    <a href="/connect"><img id="task"src="https://cdn4.iconfinder.com/data/icons/gray-user-management/512/connections-512.png" width="50px" height="50px"></img></a>
+    <a href="/create"><img id="task"src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png" width="50px" height="50px"></img></a></p>
+    {% block body %}{% endblock %}
+    <p>Mobile versions may vary... All features may not be supported on all devices.<br>&copy DEMo Programming</p>
+</body>
+</html>

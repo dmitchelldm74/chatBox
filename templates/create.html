@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}   
+<form action="/create" method="post">
+<input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
+<input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/><input onclick="save()"class="btn btn-primary btn-block"type="submit" value="Create"><br/><br/>        
+</form>
+{% endblock %}   

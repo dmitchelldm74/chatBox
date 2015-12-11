@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+    <script>
+    function save(){
+    var name = document.getElementById("nm").value;
+    var group = document.getElementById("g").value;
+    var password = document.getElementById("ps").value;
+    localStorage.setItem('chatBoxname', name);
+    localStorage.setItem('chatBoxgroup', group);
+    localStorage.setItem('chatBoxpassword', password);
+    }
+    function load(){
+    document.getElementById("nm").value = localStorage.getItem("chatBoxname");
+    document.getElementById("g").value = localStorage.getItem("chatBoxgroup");
+    document.getElementById("ps").value = localStorage.getItem("chatBoxpassword");
+    }
+    </script>
+    <button class="btn btn-primary btn-block"onclick="load()">Load Recent Login Cridentials</button><br/><br/>
+    <h2>Connect to a Group:</h2>
+    <br/>
+        <form action="/connect" method="post">
+        <input class="form-control"id="nm"placeholder="Name..."type="text" name="name"/><br/><br/>
+        <input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
+        <input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/><input onclick="save()"class="btn btn-primary btn-block"type="submit" value="Login"><br/><br/>
+      
+        
+    </form>
+    <!--
+    {% autoescape false %}
+    {% for post in posts %}
+        
+        <p>{{ post }}</p>
+        
+    {% endfor %}    
+    {% endautoescape %}
+    -->
+{% endblock %}
