@@ -22,9 +22,10 @@
         <input class="form-control"id="nm"placeholder="Name..."type="text" name="name"/><br/><br/>
         <input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
         <input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/><input onclick="save()"class="btn btn-primary btn-block"type="submit" value="Login"><br/><br/>
-        <button class="btn btn-primary btn-block"onclick="save()">Save for future use.</button><br/><br/>
+      
         
     </form>
+    <p>Mobile versions may vary... All features may not be supported on all devices.<br>&copy DEMo Programming</p>
     <!--
     {% autoescape false %}
     {% for post in posts %}
