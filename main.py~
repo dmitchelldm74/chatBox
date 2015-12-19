@@ -68,18 +68,20 @@ def form2():
             password2 = f3.split("<!>")
             print password2
             if password == password2[1]:
-                f = open(group + ':inbox', 'r')
-                f4 = f.read()
-                f.close()
-                import datetime
-                senttime = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
-                f = open(group + ':inbox', 'a+')
-                message2 = '<div class="panel-footer">' + '<b>@' + name + ':</b><br><br>' + message + '<br><br><b>' + senttime + '</b></div>'
-                f.write(message2)
-                f.close()
-                f = open(group + ':inbox', 'r')
-                f4 = f.read()
-                f.close()
+                if message == "":
+                    f = open(group + ':inbox', 'r')
+                    f4 = f.read()
+                    f.close()
+                else:
+                    import datetime
+                    senttime = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+                    f = open(group + ':inbox', 'a+')
+                    message2 = '<div class="panel-footer">' + '<b>@' + name + ':</b><br><br>' + message + '<br><br><b>' + senttime + '</b></div>'
+                    f.write(message2)
+                    f.close()
+                    f = open(group + ':inbox', 'r')
+                    f4 = f.read()
+                    f.close()
                 if message == '#del':
                     f = open(group + ':inbox', 'w')
                     f.truncate()
@@ -87,4 +89,4 @@ def form2():
         return render_template('main.html', info=[f4])    
         
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
