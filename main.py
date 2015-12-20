@@ -6,6 +6,9 @@ app = Flask(__name__)
 #name = 'Daniel'
 
 @app.route('/')
+@app.route('/home')
+def m():
+    return render_template('home.html')
 @app.route('/connect', methods = ['GET', 'POST'])
 def form():
     if request.method == 'GET':

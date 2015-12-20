@@ -19,10 +19,33 @@
     #were button{float: right;}
     </style>
 </head>
-<body onload="load()"class="jumbotron">
-<p><a href="/"><img id="task"src="http://192.185.84.204/~procrc/wp-content/uploads/2014/12/favicon.png" width="50px" height="50px"></img></a>
+<body onload="load()" class="jumbotron">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">ChatBox</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/create">Create</a></li>
+        <li><a href="/connect">Connect</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/connect"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--<p><a href="/"><img id="task"src="http://192.185.84.204/~procrc/wp-content/uploads/2014/12/favicon.png" width="50px" height="50px"></img></a>
     <a href="/connect"><img id="task"src="https://cdn4.iconfinder.com/data/icons/gray-user-management/512/connections-512.png" width="50px" height="50px"></img></a>
-    <a href="/create"><img id="task"src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png" width="50px" height="50px"></img></a></p>
+    <a href="/create"><img id="task"src="https://cdn4.iconfinder.com/data/icons/meBaze-Freebies/512/add-user.png" width="50px" height="50px"></img></a></p>-->
     {% block body %}{% endblock %}
 </body>
 </html>
