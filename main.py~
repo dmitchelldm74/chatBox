@@ -12,11 +12,13 @@ def m():
 @app.route('/connect', methods = ['GET', 'POST'])
 def form():
     if request.method == 'GET':
+        ie = 'get'
         return render_template('form.html')
     elif request.method == 'POST':
         name = request.form['name']
         group = request.form['group']
         password = request.form['password']
+        ie = 'post'
         s = '<!>'
         monkey = 'a'
         bananna = 'a'
@@ -42,6 +44,10 @@ def form1():
         s = '<!>'
         group2 = request.form['group']
         password = request.form['password']
+        maile = request.form['email']
+        f = open('email.txt', 'a+')
+        f.write(maile)
+        f.close()
         f = open('groups.txt', 'a+')
         f.write(s + group2 + s)
         f.close()
@@ -90,6 +96,8 @@ def form2():
                     f.truncate()
                     f.close()
         return render_template('main.html', info=[f4])    
-        
+@app.route('/generate')
+def gen(): 
+    return render_template('generate.html') 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

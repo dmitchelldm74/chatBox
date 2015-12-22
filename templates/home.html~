@@ -16,7 +16,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>                     
       </button>
       <a class="navbar-brand" href="/">ChatBox</a>
     </div>
@@ -25,6 +25,7 @@
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/create">Create</a></li>
         <li><a href="/connect">Connect</a></li>
+        <li><a href="/generate">Generate Cridential URL</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -35,13 +36,7 @@
 </nav>
   
 <div class="container">
-  <h1>News:</h1>
-  <h3>Mobile Version Improved!</h3>
-  <p>Almost everyone uses mobile these days. So we added a responsive desktop/mobile site.</p>
-  <h3>Automatic Sync!</h3>
-  <p>If you are not texting, the website will sync every 5 seconds.</p>
-  <h3>Secrets:</h3>
-  <p>#del deletes all messages in your inbox.</p>
+<iframe style="border-style:none; height:400px;" src="{{ url_for('static', filename='news.html') }}"></iframe>
 </div>
 
 </body>
