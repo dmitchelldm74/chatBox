@@ -3,15 +3,20 @@
 <script>
 function generate(){
 var spl = '%20#&!#aeflmhtyorgs94432n$2378vrwtqe8cnwefydsufayfsdfuoas';
+var spl2 = '&';
 var d1 = document.getElementById("nm").value;
 var d2 = document.getElementById("g").value;
 var d3 = document.getElementById("ps").value;
 document.getElementById("result").value = 'http://162.243.6.91:5000/from-url#' + spl + d1 + spl + d2 + spl + d3;
+document.getElementById("result2").value = 'http://162.243.6.91:5000/simple-from-url?' + spl2 + d1 + spl2 + d2 + spl2 + d3;
 }
 </script>
 <input id="nm" class="form-control"placeholder="Name..."type="text" name="name"/><br/><br/>
 <input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
 <input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/>
 <button class="btn btn-primary btn-block" onclick="generate()">Generate URL</button><br/><br/>
-<input class="form-control" id="result" type="text"/>
+<h1><b>Secure</b></h1><br>Can't be sent in email.<br>
+<input class="form-control" id="result" type="text"/><br>
+<h1><b>Simple</b></h1><br>Can be sent in email.<br>
+<input class="form-control" id="result2" type="text"/><br>
 {% endblock %}

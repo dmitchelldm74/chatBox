@@ -103,6 +103,10 @@ def gen():
 @app.route('/from-url')
 def adgen(): 
     return render_template('fu.html')
+    
+@app.route('/simple-from-url')
+def adgen2(): 
+    return render_template('fu2.html')    
          
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
