@@ -99,6 +99,10 @@ def form2():
 @app.route('/generate')
 def gen(): 
     return render_template('generate.html')
-     
+    
+@app.route('/from-url')
+def adgen(): 
+    return render_template('fu.html')
+         
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

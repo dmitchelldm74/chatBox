@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<script>
+function save(){
+var name = document.getElementById("nm").value;
+var group = document.getElementById("g").value;
+var password = document.getElementById("ps").value;
+localStorage.setItem('chatBoxname', name);
+localStorage.setItem('chatBoxgroup', group);
+localStorage.setItem('chatBoxpassword', password);
+    }
+function load(){
+var hash = window.location.href;
+var h2 = hash.split("%20#&!#aeflmhtyorgs94432n$2378vrwtqe8cnwefydsufayfsdfuoas");
+//alert(h2[1]);
+document.getElementById("nm").value = h2[1];
+document.getElementById("g").value = h2[2];
+document.getElementById("ps").value = h2[3];
+document.getElementById("cli").click();
+    }
+</script>
+<form action="/connect" method="post">
+<input id="nm" class="form-control"placeholder="Name..."type="text" name="name"/><br/><br/>
+<input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
+<input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/><input id="cli" onclick="save()"class="btn btn-primary btn-block"type="submit" value="Login"><br/><br/>
+</form>
+{% endblock %}    
