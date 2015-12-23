@@ -107,6 +107,14 @@ def adgen():
 @app.route('/simple-from-url')
 def adgen2(): 
     return render_template('fu2.html')    
-         
+
+@app.route('/contacts')
+def adgen8(): 
+    return render_template('contacts.html')
+        
+@app.route('/addins')
+def adins():
+    return render_template('add-ins.html')
+             
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

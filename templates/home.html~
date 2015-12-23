@@ -26,6 +26,7 @@
         <li><a href="/create">Create</a></li>
         <li><a href="/connect">Connect</a></li>
         <li><a href="/generate">Generate Cridential URL</a></li>
+        <li><a href="/contacts">Contacts</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

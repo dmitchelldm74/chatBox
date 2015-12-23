@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Contacts:</h1>
+<script>
+function add(){
+var bob = document.getElementById("b").value;
+localStorage.setItem("link8796", '<br>' + bob);
+}
+function add2(){
+var bob = document.getElementById("b").value;
+var bob2 = document.getElementById("b3").value;
+var bob3 = document.getElementById("b4").value;
+var bob4 = document.getElementById("b5").value;
+localStorage.setItem("chatbox-12", localStorage.getItem("chatbox-12") + '<br><a class="btn btn-default btn-block" href="http://162.243.6.91:5000/simple-from-url?' + '&' + bob + '&' + bob2 + '&' + bob3 + '">' + bob4 + '</a>');
+}
+function load(){
+document.getElementById("b2").innerHTML = localStorage.getItem("chatbox-12");
+}
+function del() {
+  localStorage.removeItem("chatbox-12");
+  load();
+}
+</script>
+<input class="form-control" placeholder="Name..." type="text" id="b"/><br><br>
+<input class="form-control" placeholder="Group..." type="text" id="b3"/><br><br>
+<input class="form-control" placeholder="Group Password..." type="password" id="b4"/><br><br>
+<input class="form-control" placeholder="Contact Name..." type="text" id="b5"/><br><br>
+<button class="btn btn-primary btn-block" onclick="add2(); load();">Add</button><br><br>
+<button class="btn btn-primary btn-block" onclick="del();">Delete Contact List</button><br>
+<div id="b2"></div>
+{% endblock %}
