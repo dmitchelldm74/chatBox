@@ -3,8 +3,9 @@
 <h1>Contacts:</h1>
 <script>
 function add(){
-var bob = document.getElementById("b").value;
-localStorage.setItem("link8796", '<br>' + bob);
+var bob = document.getElementById("b6").value;
+var b2 = bob.split("&");
+localStorage.setItem("chatbox-12", localStorage.getItem("chatbox-12") + '<a class="btn btn-default btn-block" href="' + bob + '">' + b2[2] + '</a>');
 }
 function add2(){
 var bob = document.getElementById("b").value;
@@ -21,11 +22,17 @@ function del() {
   load();
 }
 </script>
+<div id="b2"></div><br>
+<h3>Add Cridentials</h3>
 <input class="form-control" placeholder="Name..." type="text" id="b"/><br><br>
 <input class="form-control" placeholder="Group..." type="text" id="b3"/><br><br>
 <input class="form-control" placeholder="Group Password..." type="password" id="b4"/><br><br>
 <input class="form-control" placeholder="Contact Name..." type="text" id="b5"/><br><br>
-<button class="btn btn-primary btn-block" onclick="add2(); load();">Add</button><br><br>
-<button class="btn btn-primary btn-block" onclick="del();">Delete Contact List</button><br>
-<div id="b2"></div>
+<button class="btn btn-primary btn-block" onclick="add2(); load();">Add</button><br>
+<h3>Add from Link</h3><br>
+<input class="form-control" placeholder="From URL..." type="text" id="b6"/><br><br>
+<button class="btn btn-primary btn-block" onclick="add(); load();">Add</button><br>
+<h3>Delete List</h3>
+<button class="btn btn-primary btn-block" onclick="del();">Delete Contact List</button><br><br>
+
 {% endblock %}
