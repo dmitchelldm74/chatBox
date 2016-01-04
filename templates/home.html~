@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='chat-2.png') }}">
 </head>
 <body>
 
@@ -37,7 +38,7 @@
 </nav>
   
 <div class="container">
-<iframe style="border-style:none; height:400px;" src="{{ url_for('static', filename='news.html') }}"></iframe>
+<iframe style="border-style:none; height:800px;" src="{{ url_for('static', filename='news.html') }}"></iframe>
 </div>
 
 </body>
