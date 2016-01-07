@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
-
+import os.path
+#a = os.path.isfile(name)
 app = Flask(__name__)
 
 #group = 'ccc'
@@ -45,18 +46,22 @@ def form1():
         group2 = request.form['group']
         password = request.form['password']
         maile = request.form['email']
-        f = open('email.txt', 'a+')
-        f.write(maile)
-        f.close()
-        f = open('groups.txt', 'a+')
-        f.write(s + group2 + s)
-        f.close()
-        f = open(group2 + '.txt', 'w')
-        f.write(s + password + s)
-        f.close()
-        f = open(group2 + ':inbox', 'w')
-        f.close()
-        return render_template('form.html')
+        a = os.path.isfile(group2 + ':inbox')
+        if a == False:
+            f = open('email.txt', 'a+')
+            f.write(maile)
+            f.close()
+            f = open('groups.txt', 'a+')
+            f.write(s + group2 + s)
+            f.close()
+            f = open(group2 + '.txt', 'w')
+            f.write(s + password + s)
+            f.close()
+            f = open(group2 + ':inbox', 'w')
+            f.close()
+            return render_template('form.html')
+        else:    
+            return "<font color='red'>Group Already Exists!</font>&nbsp;<a href='/create'>Back</a>"
         
 @app.route('/post', methods = ['GET', 'POST'])
 def form2():
@@ -115,7 +120,43 @@ def adgen8():
 @app.route('/addins')
 def adins():
     return render_template('add-ins.html')
-    
+@app.route('/embed', methods = ['GET', 'POST'])
+def embed():
+    if request.method == 'GET':
+        ie = ''
+        return render_template('embed.html', c=ie)
+    elif request.method == 'POST':
+        name = request.form['name']
+        group = request.form['group']
+        password = request.form['password']
+        ln = [name, group, password]
+        a = 's'
+        b = 's'
+        if a == b:
+            import random
+            on = random.randint(0, 1000)
+            on2 = random.randint(0, 2000)
+            on3 = random.randint(0, 3000)
+            onh = 'anf' + str(on) + 'fhgjk' + str(on2) + 'kjslf' + str(on3)
+            a = os.path.isfile(onh)  
+            if a == True:
+                on = random.randint(0, 1000)
+                on2 = random.randint(0, 2000)
+                on3 = random.randint(0, 3000)
+                onh = 'anf' + str(on) + 'fhgjk' + str(on2) + 'kjslf' + str(on3)
+                a = os.path.isfile(onh)
+                j = open(onh, "w")
+                j.write("<!>" + ln[1] + "<!>" + ln[2] + "<!>" + ln[0] + "<!>")
+                j.close() 
+                c23 = '<iframe src="http://162.243.6.91:5000/' + onh + '"></iframe>' 
+            else:
+                j = open(onh, "w")
+                j.write("<!>" + ln[1] + "<!>" + ln[2] + "<!>" + ln[0] + "<!>")
+                j.close() 
+                c23 = '<iframe src="http://162.243.6.91:5000/' + onh + '"></iframe>'  
+        
+        return render_template('embed.html', c=c23)   
+                
 @app.route('/inbox/<group>/<password>', methods = ['GET', 'POST'])
 def form876(group, password):
     if request.method == 'GET':
@@ -136,6 +177,25 @@ def form876(group, password):
         f2 = f.read()
         f.close()   
         return f2
+        
+@app.route('/<number>')
+def numer(number): 
+    f = open(number, "r")
+    f2 = f.read()
+    f3 = f2.split("<!>")
+    f.close()
+    print f3[1] + '.txt'
+    f = open(f3[1] + '.txt', 'r')
+    f4 = f.read()
+    f5 = f4.split("<!>")
+    f.close()
+    if f3[2] == f5[1]:
+        f = open(f3[1] + ':inbox', 'r')
+        f6 = f.read()
+        f.close()
+    else:
+        f6 = "Login Failed..."    
+    return render_template('source.html', info=[f6])        
              
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

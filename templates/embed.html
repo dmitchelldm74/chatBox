@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+<form action="/embed" method="post">
+<input id="nm" class="form-control"placeholder="Name..."type="text" name="name"/><br/><br/>
+<input class="form-control"id="g"placeholder="Group..." type="text" name="group"/><br/><br/>
+<input class="form-control"id="ps"placeholder="Password..."type="password" name="password"/><br/><br/>
+<button class="btn btn-primary btn-block" onclick="">Generate Embed Code</button><br/><br/>
+<h1>Result:</h1>
+<input class="form-control" id="result2" value="{{ c }}" type="text"/>
+</form>
+{% endblock %} 
