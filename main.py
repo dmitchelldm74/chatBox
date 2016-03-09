@@ -45,6 +45,7 @@ def form1():
         maile = request.form['email']
         #print group2, password, maile
         #database.execute("INSERT INTO users VALUES ('Daniel','mom1','dmitchell.dm74@gmail.com', 98727)", False)
+        a = False
         try:
             for row in c.execute('SELECT password FROM users WHERE user = ?', (group2,)):
                 try:

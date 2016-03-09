@@ -45,6 +45,7 @@ def form1():
         maile = request.form['email']
         #print group2, password, maile
         #database.execute("INSERT INTO users VALUES ('Daniel','mom1','dmitchell.dm74@gmail.com', 98727)", False)
+        a = False
         try:
             for row in c.execute('SELECT password FROM users WHERE user = ?', (group2,)):
                 try:
@@ -213,4 +214,4 @@ def delete(boxn, ps, idn):
                 f4 = f4 + message[0]
     return render_template('source.html', info=[f4])             
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0", port=5555)
